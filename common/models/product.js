@@ -21,4 +21,46 @@ module.exports = function(Product) {
     };
     callback(null, result);
   };
+
+  // Validate minimal length of the name
+  Product.validatesLengthOf('name', {
+    min: 3,
+    message: {
+      min: 'Name should be at least 3 characters',
+    },
+  });
+
+  // Validate the name to be unique
+  Product.validatesUniquenessOf('name')
+
+  // Validate the price to be a positive integer
+  const positiveInteger = /^[0-9]*$/;
+
+  const validatePositiveInteger = function(err) {
+    if(!positiveInteger.test(this.price)) {
+      err()
+    }
+  }
+
+  Product.validate('price', validatePositiveInteger, {
+    message: 'Price should be a positive integer',
+  });
+
+  // Validate the price to be a minimal value (async)
+  function validateMinimalPrice(err, done) {
+    const price = this.price
+
+    process.nextTick(() => {
+      const minimalPriceFromDB = 99
+      if (price < minimalPriceFromDB) {
+        err();
+      }
+      done();
+    });
+  };
+
+  Product.validateAsync('price', validateMinimalPrice, {
+    message: 'Price should be higher than the minimal price in the DB'
+  });
+
 };
