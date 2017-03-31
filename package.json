@@ -2,12 +2,25 @@
   "name": "egghead-loopback",
   "version": "1.0.0",
   "main": "server/server.js",
+  "now": {
+    "name": "egghead-loopback",
+    "alias": [
+      "egghead-loopback"
+    ],
+    "env": {
+      "MONGODB_URL": "@mongodb-url",
+      "NODE_ENV": "production"
+    }
+  },
   "scripts": {
     "dev": "nodemon server/server.js --watch common --watch server",
     "lint": "eslint .",
     "start": "node .",
     "test": "NODE_ENV=test mocha test/**/*.test.js",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "now:deploy": "now",
+    "now:alias": "now alias",
+    "now": "npm run now:deploy && npm run now:alias"
   },
   "dependencies": {
     "compression": "^1.0.3",
