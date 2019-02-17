@@ -1,0 +1,43 @@
+{
+  "ids": {
+    "User": 2,
+    "AccessToken": 2,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1,
+    "Property": 10,
+    "Product": 4,
+    "Category": 3
+  },
+  "models": {
+    "User": {
+      "1": "{\"password\":\"$2a$10$iXYCfRVyCuC4EPX8Vuxnaue5RK7iCJReh7J7.gc7J/Hv3a9vh2MBG\",\"email\":\"admin@example.com\",\"id\":1}"
+    },
+    "AccessToken": {
+      "s3cr3t": "{\"id\":\"s3cr3t\",\"userId\":1}"
+    },
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {},
+    "Property": {
+      "1": "{\"name\":\"cat1prod1prop1\",\"productId\":1,\"id\":1}",
+      "2": "{\"name\":\"cat1prod1prop2\",\"productId\":1,\"id\":2}",
+      "3": "{\"name\":\"cat1prod1prop3\",\"productId\":1,\"id\":3}",
+      "4": "{\"name\":\"cat1prod2prop1\",\"productId\":2,\"id\":4}",
+      "5": "{\"name\":\"cat1prod2prop2\",\"productId\":2,\"id\":5}",
+      "6": "{\"name\":\"cat1prod2prop3\",\"productId\":2,\"id\":6}",
+      "7": "{\"name\":\"cat1prod3prop1\",\"productId\":3,\"id\":7}",
+      "8": "{\"name\":\"cat1prod3prop2\",\"productId\":3,\"id\":8}",
+      "9": "{\"name\":\"cat1prod3prop3\",\"productId\":3,\"id\":9}"
+    },
+    "Product": {
+      "1": "{\"name\":\"cat1prod1\",\"price\":100,\"categoryId\":1,\"id\":1}",
+      "2": "{\"name\":\"cat1prod2\",\"price\":200,\"categoryId\":1,\"id\":2}",
+      "3": "{\"name\":\"cat1prod3\",\"price\":300,\"categoryId\":1,\"id\":3}"
+    },
+    "Category": {
+      "1": "{\"name\":\"cat1\",\"id\":1}",
+      "2": "{\"name\":\"cat2\",\"id\":2}"
+    }
+  }
+}

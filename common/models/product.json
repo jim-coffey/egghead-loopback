@@ -24,6 +24,11 @@
       "type": "belongsTo",
       "model": "Category",
       "foreignKey": "categoryId"
+    },
+    "properties": {
+      "type": "hasMany",
+      "model": "Property",
+      "foreignKey": "productId"
     }
   },
   "acls": [
